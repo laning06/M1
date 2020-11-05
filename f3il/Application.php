@@ -23,8 +23,8 @@ class Application{
 
     public function startLogger(){
         $this->logger = new Logger('f3il');
-        $this->logger->pushHandler(new StreamHandler('log/app.log',Logger::DEBUG);
-        $this->logger->addInfo('App started');
+        $this->logger->pushHandler(new StreamHandler('log/app.log'),Logger::DEBUG);
+        $this->logger->info('App started');
     }
 
     public function getLogger(){
@@ -58,7 +58,7 @@ class Application{
             $controllerClass=
             APP_NAMESPACE.'\Controllers\\'.$controllerName.'Controller';
             if(!class_exists($controllerClass)){
-                Error('Application : controleur introuvable'.$controllerClass);
+                throw new Error('Application : controleur introuvable'.$controllerClass);
             }
             return $controllerClass;
         }
