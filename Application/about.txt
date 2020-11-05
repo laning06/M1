@@ -1,0 +1,1 @@
+dossier contenant les fichiers spécifiques à l'application (dont notre fichier .ini de configuration) 
